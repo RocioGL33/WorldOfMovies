@@ -37,10 +37,7 @@ const Home = () => {
     (movie) =>
       !star ||
       (movie.vote_average <= star * 2 && movie.vote_average >= (star - 1) * 2)
-    //((movie.vote_average + 1) / 2).Math === star
   );
-
-  // minimo => 1- * maximo => 2 ahora el minimo es => 2 * 2 => el maximo ahora es => 4 4-6
 
   return (
     <>
@@ -95,19 +92,16 @@ const Home = () => {
           <h4>Jobs</h4>
           <h4>Newsletter</h4>
           <h4>Legal</h4>
-          <h4>Cookies</h4>
         </div>
         <div className="f-information">
           <h3>branch offices</h3>
           <h4> California - CA</h4>
           <h4> Utah - UT</h4>
-          <h4> Texas - TX</h4>
           <h4> Louisiana - LA</h4>
         </div>
         <div className="f-information">
           <h3>Cinemas</h3>
           <h4> 2D standard</h4>
-          <h4> 2D Plus</h4>
           <h4> 3D standar</h4>
           <h4> 3D Plus</h4>
         </div>

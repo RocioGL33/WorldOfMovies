@@ -15,8 +15,7 @@ const MovieDetail = () => {
 
       <div className="father-detail">
         <div className="container-detail">
-          {/*Sacar lo que esta antes de los dos puntos*/}
-          <h4 className="title"> Title: {detail.original_title}</h4>
+          <h4 className="title">{detail.original_title}</h4>
           <h4> {detail.overview}</h4>
           <h4> Release Date: {detail.release_date}</h4>
           <h4> Vote Average: {detail.vote_average}</h4>
