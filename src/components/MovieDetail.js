@@ -22,10 +22,7 @@ const MovieDetail = () => {
           <h4> Production Company: {detail.production_companies}</h4>
 
           {detail.genres?.map((g) => (
-            <div>
-              <label>Genres:</label>
-              <h3 key={g}> {g}</h3>
-            </div>
+            <h3 key={g}> {g}</h3>
           ))}
         </div>
         <div className="container-media">
