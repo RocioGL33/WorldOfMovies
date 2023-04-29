@@ -52,15 +52,17 @@ const Home = () => {
   };
 
   // Cuando el usuario hace clic en el botón, desplazar hacia arriba
-  mybutton.addEventListener("click", function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
+  if (mybutton) {
+    mybutton.addEventListener("click", function () {
+      document.body.scrollTop = 0;
+      document.documentElement.scrollTop = 0;
+    });
+  }
 
   return (
     <div className="bg-darkGrey">
-      <button class="fixed bottom-4 right-4 p-2">
-        <div class="bg-[#C11511] rounded-full p-3">
+      <button className="fixed bottom-4 right-4 p-2">
+        <div className="bg-[#C11511] rounded-full p-3">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-7 w-7 text-white"
@@ -76,15 +78,15 @@ const Home = () => {
         </div>
       </button>
 
-      <div className="flex items-center w-full py-48 bg-[url('https://i.imgur.com/3Zbkopf.png')] bg-center">
-        <div className="relative left-5 bottom-[260px] bg-darkGrey h-11 w-11 flex items-center justify-center rounded-full">
+      <div className="flex items-center w-full py-32 bg-[url('https://i.imgur.com/3Zbkopf.png')] bg-center md:py-48 ">
+        <div className="hidden md:relative md:left-5 md:bottom-[260px] md:bg-darkGrey md:h-11 md:w-11 md:flex md:items-center md:justify-center md:rounded-full">
           <Link to="/">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               id="estate"
-              width="25"
-              height="25"
+              width="23"
+              height="23"
             >
               <path
                 fill="#FFFFFF"
@@ -94,10 +96,12 @@ const Home = () => {
           </Link>
         </div>
         <div className="container flex-col mx-auto text-center text-white">
-          <h1 className="text-7xl font-medium mb-6">
+          <h1 className="text-4xl md:text-7xl font-medium mb-6">
             Your favorite movies have arrived.
           </h1>
-          <p className="text-2xl mb-12">They all have something to tell you.</p>
+          <p className="text-lg md:text-2xl mb-12">
+            They all have something to tell you.
+          </p>
 
           <input
             type="search"
@@ -105,7 +109,7 @@ const Home = () => {
             placeholder="Search"
             value={search}
             onChange={(e) => handleOnChange(e)}
-            className="bg-white h-10 w-96 px-5 pr-10 rounded-full text-sm text-darkGrey focus:outline-none"
+            className="bg-white h-10 w-60 md:w-96 px-5 pr-10 rounded-full text-sm text-darkGrey focus:outline-none"
           />
           <button type="submit" className="relative right-8 top-1 ">
             <svg
@@ -128,16 +132,18 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="flex justify-around">
-        <div className="flex h-8 relative right-20">
-          <div className="pr-2 pt-[50px]">
-            <h2 className="text-white text-2xl">Releases of the week</h2>
+      <div className="flex md:justify-around">
+        <div className="flex h-8 pl-8 md:relative md:right-20">
+          <div className="pr-2 py-6 md:pt-[50px]">
+            <h2 className="text-white text-lg md:text-2xl">
+              Releases of the week
+            </h2>
           </div>
-          <div className="pt-[52px]">
+          <div className="pt-6 md:pt-[52px]">
             <Flame />
           </div>
         </div>
-        <div className="pt-10 relative left-20">
+        <div className="hidden md:top-1 md:pt-10 md:left-20">
           <ReactStars
             count={5}
             value={star}
@@ -150,7 +156,7 @@ const Home = () => {
       </div>
 
       <div flex="true" className="flex flex-col items-center">
-        <div className="grid grid-cols-4 gap-5 px-8 pt-8">
+        <div className="grid gap-5 grid-cols-2 md:grid-cols-4 px-8 pt-10 md:pt-8">
           {result.map((movie) => (
             <Movie
               key={movie.id}
@@ -332,21 +338,6 @@ const Home = () => {
                       className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                       href="/"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 shrink-0 text-grey"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                        />
-                      </svg>
-
                       <span className="flex-1 text-white">
                         worldofmovies@wom.com
                       </span>
@@ -358,22 +349,7 @@ const Home = () => {
                       className="flex items-center justify-center gap-1.5 ltr:sm:justify-start rtl:sm:justify-end"
                       href="/"
                     >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        className="h-5 w-5 shrink-0 text-grey"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                        stroke-width="2"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                        />
-                      </svg>
-
-                      <span className="flex-1 text-white">0123456789</span>
+                      <span className="flex-1 text-white">012-345-67-89</span>
                     </a>
                   </li>
                 </ul>

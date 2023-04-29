@@ -3,23 +3,23 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
-    <div className="bg-[url('https://i.imgur.com/JNLTgW2.png')] bg-cover h-screen w-screen flex flex-col">
-      <div className="pt-80 pl-16">
-        <h1 className="text-6xl text-white">Welcome to</h1>
-        <span className="text-8xl font-semibold text-white">
+    <div className="bg-[url('https://i.imgur.com/JNLTgW2.png')] h-screen w-screen flex flex-col">
+      <div className="pt-64 pl-9 md:pt-80 md:pl-16">
+        <h1 className="text-3xl md:text-6xl text-white">Welcome to</h1>
+        <span className="text-7xl md:text-8xl font-semibold text-white">
           World of Movies
         </span>
       </div>
-      <div className="pt-20 pl-96">
+      <div className="pl-10 pt-20 md:pl-96">
         <Link to="/home">
-          <button className="text-white text-2xl flex">
+          <button className="text-white text-xl md:text-2xl flex">
             Enter
             <svg
               xmlns="http://www.w3.org/2000/svg"
               data-name="Layer 1"
               viewBox="0 0 24 24"
               id="arrow-right"
-              width="33"
+              width="30"
             >
               <path
                 fill="#F7F7F7"
