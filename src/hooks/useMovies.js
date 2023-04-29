@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
 export const useMovies = (search) => {
   const [movies, setMovies] = useState([]);
 
@@ -11,13 +9,13 @@ export const useMovies = (search) => {
   const getMovies = async (search) => {
     let url;
     if (search) {
-      url = `${base_url}search/movie?api_key=${API_KEY}&language=en-US&query=${search}&page=1&include_adult=false`;
+      url = `${base_url}search/movie?api_key=55a8fa4c6d88b26c1c9e150c83aa784e&language=en-US&query=${search}&page=1&include_adult=false`;
     } else {
-      url = `${base_url}discover/movie?api_key=${API_KEY}&language=en-US&sort_by=popularity.desc&page=1&with_watch_monetization_types=flatrate`;
+      url = `${base_url}discover/movie?api_key=55a8fa4c6d88b26c1c9e150c83aa784e&language=en-US&sort_by=popularity.desc&page=1&with_watch_monetization_types=flatrate`;
     }
 
     const adds = await axios
-      .get(`${base_url}configuration?api_key=${API_KEY}`)
+      .get(`${base_url}configuration?api_key=55a8fa4c6d88b26c1c9e150c83aa784e`)
       .then((res) => res.data);
     //console.log(adds.images);
 
