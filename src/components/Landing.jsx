@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Landing = () => {
   return (
-    <div className="bg-[url('https://i.imgur.com/JNLTgW2.png')] h-screen w-screen flex flex-col">
+    <div className="bg-[url('https://i.imgur.com/JNLTgW2.png')] bg-cover h-screen w-screen flex flex-col">
       <div className="pt-64 pl-9 md:pt-80 md:pl-16">
         <h1 className="text-3xl md:text-6xl text-white">Welcome to</h1>
         <span className="text-7xl md:text-8xl font-semibold text-white">

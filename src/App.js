@@ -6,7 +6,7 @@ import MovieDetail from "./components/MovieDetail";
 function App() {
   return (
     <BrowserRouter>
-      <div className="">
+      <div>
         <Routes>
           <Route exact path="/" element={<Landing />} />
           <Route path="/home" element={<Home />} />

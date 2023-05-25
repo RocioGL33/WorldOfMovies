@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { useDetail } from "../hooks/useDetail";
+import { UilCalendarAlt, UilStar, UilFilm } from "@iconscout/react-unicons";
 
 const MovieDetail = () => {
   const { id } = useParams();
@@ -8,7 +9,7 @@ const MovieDetail = () => {
 
   return (
     <>
-      <div className="m-4 bg-darkGrey h-11 w-11 flex items-center justify-center rounded-full">
+      <div className="md:flex m-4 bg-darkGrey h-11 w-11 items-center justify-center rounded-full">
         <Link to="/home">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -27,19 +28,43 @@ const MovieDetail = () => {
 
       <div className="">
         <div className="">
-          <h4 className="">{detail.original_title}</h4>
-          <h4> {detail.overview}</h4>
-          <h4> Release Date: {detail.release_date}</h4>
-          <h4> Vote Average: {detail.vote_average}</h4>
-          <h4> Production Company: {detail.production_companies}</h4>
-
-          {detail.genres?.map((g) => (
-            <h3 key={g}>{g}</h3>
-          ))}
+          <img
+            src={detail.img}
+            alt="img not found"
+            id="img-detail"
+            className=""
+          />
         </div>
-        <div className="container-media">
-          <img src={detail.img} alt="img not found" id="img-detail" />
-          <h4 className="">{detail.tagline}</h4>
+        <div className="text-grey mt-3">
+          <h4 className="text-white text-xl pl-2 pb-1">
+            {detail.original_title}
+          </h4>
+          <h4 className="text-md px-2">{detail.tagline}</h4>
+          <h4 className="text-sm p-2"> {detail.overview}</h4>
+          <div className="m-2 p-3 bg-intenseRed rounded-lg">
+            <div className="flex">
+              <UilCalendarAlt />
+              <h4 className="pl-2">Release Date: {detail.release_date}</h4>
+            </div>
+            <div className="flex pt-5">
+              <UilStar />
+              <h4 className="pl-2"> Vote Average: {detail.vote_average}</h4>
+            </div>
+            <div className="flex pt-5">
+              <UilFilm />
+              <h4 className="pl-2">
+                Production Company: {detail.production_companies}
+              </h4>
+            </div>
+          </div>
+          <div className="p-2 m-2 bg-intenseRed rounded-lg">
+            <h4 className="text-lg">Genres: </h4>
+            {detail.genres?.map((g) => (
+              <h3 className="pt-3" key={g}>
+                • {g}
+              </h3>
+            ))}
+          </div>
         </div>
       </div>
     </>

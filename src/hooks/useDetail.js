@@ -1,19 +1,19 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
-
 export const useDetail = (id) => {
   const [detail, setDetail] = useState({});
   const base_url = "https://api.themoviedb.org/3/";
 
   const getDetail = async () => {
     const adds = await axios
-      .get(`${base_url}configuration?api_key=${API_KEY}`)
+      .get(`${base_url}configuration?api_key=55a8fa4c6d88b26c1c9e150c83aa784e`)
       .then((res) => res.data);
 
     const response = await axios
-      .get(`${base_url}movie/${id}?api_key=${API_KEY}&language=en-US`)
+      .get(
+        `${base_url}movie/${id}?api_key=55a8fa4c6d88b26c1c9e150c83aa784e&language=en-US`
+      )
 
       .then((res) => res.data);
     //console.log(response);
