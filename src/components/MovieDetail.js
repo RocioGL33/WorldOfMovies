@@ -26,17 +26,17 @@ const MovieDetail = () => {
         </Link>
       </div>
 
-      <div className="">
+      <div className="md:flex">
         <div className="">
           <img
             src={detail.img}
             alt="img not found"
             id="img-detail"
-            className=""
+            className="md:w-[1090px] mt-[77px]"
           />
         </div>
-        <div className="text-grey mt-3">
-          <h4 className="text-white text-xl pl-2 pb-1">
+        <div className="text-grey mt-3 md:text-xl">
+          <h4 className="text-white text-xl pl-2 pb-1 md:text-2xl">
             {detail.original_title}
           </h4>
           <h4 className="text-md px-2">{detail.tagline}</h4>
